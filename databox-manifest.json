@@ -7,10 +7,10 @@
     "licence": "MIT",
     "databox-type": "app",
     "tags": "",
-    "homepage": "https://github.com/tlodge/tlodge-",
+    "homepage": "https://github.com/tlodge/databox.task_clock",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/tlodge/tlodge-.git"
+        "url": "git+https://github.com/tlodge/databox.task_clock.git"
     },
     "packages": [
         {
