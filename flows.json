@@ -1,0 +1,90 @@
+[
+    {
+        "id": "dd59c2ba.806b8",
+        "label": "new package",
+        "type": "tab"
+    },
+    {
+        "id": "f7cb83bb.56f9b",
+        "type": "dbfunction",
+        "z": "dd59c2ba.806b8",
+        "name": "",
+        "func": "var moment = require(\"moment\");\nconsole.log(msg.payload)\nreturn {\n    payload: moment(msg.payload).format(\"HH:mm:ss\")\n}",
+        "outputs": 1,
+        "inputtypedef": "",
+        "outputtypedef": "",
+        "noerr": 0,
+        "x": 294,
+        "y": 209,
+        "wires": [
+            [
+                "5fdf96d7.90c428",
+                "4f82a8c1.e59a38"
+            ]
+        ]
+    },
+    {
+        "id": "c26e49ab.423ac8",
+        "type": "app",
+        "z": "dd59c2ba.806b8",
+        "name": "",
+        "appId": "webapp",
+        "layout": [
+            [
+                "4f82a8c1.e59a38"
+            ]
+        ],
+        "x": 607,
+        "y": 276,
+        "wires": []
+    },
+    {
+        "id": "3b0df226.57918e",
+        "type": "inject",
+        "z": "dd59c2ba.806b8",
+        "name": "inject",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": 1,
+        "crontab": "",
+        "once": false,
+        "x": 117,
+        "y": 211,
+        "wires": [
+            [
+                "f7cb83bb.56f9b"
+            ]
+        ]
+    },
+    {
+        "id": "5fdf96d7.90c428",
+        "type": "debugger",
+        "z": "dd59c2ba.806b8",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "true",
+        "x": 391,
+        "y": 92,
+        "wires": []
+    },
+    {
+        "id": "4f82a8c1.e59a38",
+        "type": "webify",
+        "z": "dd59c2ba.806b8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "\n<div style=\"text-align:center; font-size:200px\">{{payload}}</div>",
+        "x": 398.5,
+        "y": 278,
+        "wires": [
+            [
+                "c26e49ab.423ac8"
+            ]
+        ]
+    }
+]
