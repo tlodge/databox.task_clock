@@ -1,0 +1,31 @@
+{
+    "manifest-version": 1,
+    "name": "tlodge-",
+    "version": "0.1.0",
+    "description": "",
+    "author": "tlodge",
+    "licence": "MIT",
+    "databox-type": "app",
+    "tags": "",
+    "homepage": "https://github.com/tlodge/tlodge-",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tlodge/tlodge-.git"
+    },
+    "packages": [
+        {
+            "id": "dd59c2ba.806b8",
+            "name": "new package",
+            "purpose": "",
+            "required": false,
+            "datastores": [],
+            "benefits": ""
+        }
+    ],
+    "allowed-combinations": [],
+    "datasources": [],
+    "network-permissions": [],
+    "resource-requirements": {},
+    "volumes": [],
+    "export-whitelist": []
+}
