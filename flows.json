@@ -9,17 +9,18 @@
         "type": "dbfunction",
         "z": "dd59c2ba.806b8",
         "name": "",
-        "func": "var moment = require(\"moment\");\nconsole.log(msg.payload)\nreturn {\n    payload: moment(msg.payload).format(\"HH:mm:ss\")\n}",
+        "func": "var moment = require(\"moment\");\nconsole.log(msg.payload)\nreturn {\n    payload: moment(msg.payload).format(\"HH:mm:ss\")\n} ",
         "outputs": 1,
         "inputtypedef": "",
-        "outputtypedef": "",
+        "outputtypedef": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"payload\": {\n            \"type\": \"literal\"\n        }\n    }\n}",
         "noerr": 0,
         "x": 294,
         "y": 209,
         "wires": [
             [
                 "5fdf96d7.90c428",
-                "4f82a8c1.e59a38"
+                "4f82a8c1.e59a38",
+                "de263fc6.c6c62"
             ]
         ]
     },
@@ -32,6 +33,9 @@
         "layout": [
             [
                 "4f82a8c1.e59a38"
+            ],
+            [
+                "de263fc6.c6c62"
             ]
         ],
         "x": 607,
@@ -79,8 +83,105 @@
         "format": "handlebars",
         "syntax": "mustache",
         "template": "\n<div style=\"text-align:center; font-size:200px\">{{payload}}</div>",
-        "x": 398.5,
-        "y": 278,
+        "x": 420,
+        "y": 209,
+        "wires": [
+            [
+                "c26e49ab.423ac8"
+            ]
+        ]
+    },
+    {
+        "id": "de263fc6.c6c62",
+        "type": "uibuilder",
+        "z": "dd59c2ba.806b8",
+        "name": "",
+        "templatesById": {
+            "35464cac.cd7f64": {
+                "id": "35464cac.cd7f64",
+                "label": "text:35464cac.cd7f64",
+                "type": "text",
+                "x": 369,
+                "y": 227.00000000000003,
+                "text": "your text",
+                "style": {
+                    "fill": "black",
+                    "stroke": "none",
+                    "stroke-width": 1,
+                    "opacity": 1,
+                    "text-decoration": "none",
+                    "font-weight": "normal",
+                    "font-size": 30,
+                    "font-style": "normal",
+                    "font-family": "impact, georgia, times, serif"
+                }
+            }
+        },
+        "templates": [
+            "35464cac.cd7f64"
+        ],
+        "mappings": [
+            {
+                "mappingId": "3c4a6441.e6e6cc",
+                "ttype": "attribute",
+                "from": {
+                    "sourceId": "f7cb83bb.56f9b",
+                    "key": "payload",
+                    "path": [],
+                    "type": "literal"
+                },
+                "to": {
+                    "path": [
+                        "35464cac.cd7f64"
+                    ],
+                    "type": "text",
+                    "property": "text"
+                }
+            }
+        ],
+        "transformers": {
+            "3c4a6441.e6e6cc": "return payload;"
+        },
+        "canvasdimensions": {
+            "w": 770,
+            "h": 447.02777777777777
+        },
+        "tree": {
+            "3c4a6441.e6e6cc": {
+                "node": {
+                    "nid": "de263fc6.c6c62",
+                    "type": "uibuilder",
+                    "category": "processors",
+                    "color": "#3771C8",
+                    "unicode": "f03e"
+                },
+                "parents": [
+                    {
+                        "node": {
+                            "nid": "f7cb83bb.56f9b",
+                            "type": "dbfunction",
+                            "category": "processors",
+                            "color": "#3771C8",
+                            "unicode": "f121"
+                        },
+                        "parents": [
+                            {
+                                "node": {
+                                    "nid": "3b0df226.57918e",
+                                    "type": "inject",
+                                    "category": "input",
+                                    "color": "#d40000",
+                                    "unicode": "f017"
+                                },
+                                "parents": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "x": 405,
+        "y": 382,
         "wires": [
             [
                 "c26e49ab.423ac8"
